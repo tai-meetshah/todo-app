@@ -1,9 +1,6 @@
 const createError = require("http-errors");
 const bcrypt = require("bcryptjs");
-<<<<<<< HEAD
-=======
 const validation = require("../../utils/validation.json");
->>>>>>> 431f3f6c1603b243346ddac0284bd6378eec011b
 
 const User = require("../../models/userModel");
 
@@ -42,39 +39,21 @@ exports.changePassword = async (req, res, next) => {
     const { oldPassword, newPassword } = req.body;
 
     if (!oldPassword)
-<<<<<<< HEAD
-      return next(createError.BadRequest("changePass.oldPassword"));
-    if (!newPassword)
-      return next(createError.BadRequest("changePass.newPassword"));
-
-    const isMatch = await bcrypt.compare(oldPassword, user.password);
-    if (!isMatch)
-      return next(createError.BadRequest("changePass.wrongPassword"));
-=======
       return next(createError.BadRequest(validation.oldPassword));
     if (!newPassword)
       return next(createError.BadRequest(validation.newPassword));
 
     const isMatch = await bcrypt.compare(oldPassword, user.password);
     if (!isMatch) return next(createError.BadRequest(validation.wrongPassword));
->>>>>>> 431f3f6c1603b243346ddac0284bd6378eec011b
 
     user.password = newPassword;
     await user.save();
 
     return res.json({
       success: true,
-<<<<<<< HEAD
-      message: "changePass.updated",
-=======
       message: validation.pwSuccess,
->>>>>>> 431f3f6c1603b243346ddac0284bd6378eec011b
     });
   } catch (error) {
     next(error);
   }
 };
-<<<<<<< HEAD
-=======
-
->>>>>>> 431f3f6c1603b243346ddac0284bd6378eec011b

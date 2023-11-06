@@ -36,10 +36,6 @@ const adminSchema = new mongoose.Schema({
             message: 'New password and confirm password do not match!',
         },
     },
-<<<<<<< HEAD
-    role: { type: String, enum: ['admin', 'superAdmin'], default: 'admin' },
-=======
->>>>>>> 431f3f6c1603b243346ddac0284bd6378eec011b
 });
 
 // Generate auth token

@@ -20,11 +20,7 @@ router
     .get(authController.getReset)
     .post(authController.postReset);
 
-<<<<<<< HEAD
-router.post('/auth', authController.authenticate);
-=======
 // router.post('/auth', authController.authenticate);
->>>>>>> 431f3f6c1603b243346ddac0284bd6378eec011b
 
 router.use(authController.checkAdmin);
 

@@ -5,10 +5,6 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
-<<<<<<< HEAD
-    customerId: String,
-=======
->>>>>>> 431f3f6c1603b243346ddac0284bd6378eec011b
     fname: { type: String, required: [true, 'validation.fname'], trim: true },
     lname: { type: String, required: [true, 'validation.lname'], trim: true },
     email: {
@@ -33,15 +29,6 @@ const userSchema = new mongoose.Schema({
                 throw new Error('Phone is invalid');
         },
     },
-<<<<<<< HEAD
-
-    companyName: {
-        type: String,
-        trim: true,
-        required: [true, 'validation.companyName'],
-    },
-=======
->>>>>>> 431f3f6c1603b243346ddac0284bd6378eec011b
     location: {
         type: String,
         trim: true,

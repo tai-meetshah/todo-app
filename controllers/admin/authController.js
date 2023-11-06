@@ -19,10 +19,6 @@ exports.checkAdmin = async (req, res, next) => {
       }
       req.admin = admin;
       res.locals.photo = admin.photo;
-<<<<<<< HEAD
-      res.locals.role = admin.role;
-=======
->>>>>>> 431f3f6c1603b243346ddac0284bd6378eec011b
       req.session.checkAdminSuccess = undefined;
       next();
     } else {
@@ -160,23 +156,6 @@ exports.postReset = async (req, res) => {
   }
 };
 
-<<<<<<< HEAD
-exports.authenticate = async (req, res, next) => {
-  try {
-    const { username, password } = req.body;
-    const creds = await Creds.findOne({ username });
-
-    if (!creds || !(await creds.correctPassword(password, creds.password)))
-      return next(createError.Unauthorized("Incorrect username or password"));
-
-    res.json({ success: true });
-  } catch (error) {
-    next(error);
-  }
-};
-
-=======
->>>>>>> 431f3f6c1603b243346ddac0284bd6378eec011b
 exports.getProfile = (req, res) => res.render("profile", { admin: req.admin });
 
 exports.postProfile = async (req, res) => {
